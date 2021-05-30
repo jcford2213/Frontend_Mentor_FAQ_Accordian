@@ -1,0 +1,261 @@
+/*  CSS for FAQ Accordian page
+    Frontend Mentor Challenge 
+    Authored by Jackson Crantford
+    5/24/2021
+*/
+
+/*  
+
+|| ------ TABLE OF CONTENTS ------ ||
+
+-- Global Fonts
+
+-- Body Styles
+
+-- Content Wrapper
+
+-- Banner Image
+
+-- FAQ Section
+
+-- Footer
+
+-- Media Query (Orientation: Landscape)
+
+    -- __Wrapper
+
+    -- __FAQ Section
+
+
+    -- __Banner Images
+
+    || ------------------------------- ||
+
+*/
+
+
+/*  =====================
+    || Global Fonts
+    =====================*/
+ *{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: hsl(240, 6%, 50%); /* Dark grayish blue */
+}
+/*  ===================
+    || END Global Fonts
+    ===================*/
+
+    
+/*  ====================
+    || Body Styles 
+    ====================*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    min-height: 100vh;
+}
+/*  ==================
+    || END Body Styles 
+    ==================*/
+
+
+/*  ========================
+    || Contnet Wrapper
+    ========================*/
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 84vw;
+    min-width: 320px;
+    max-width: 460px;
+    height: 530px;
+    border-radius: 25px;
+    margin-top: 19vh;
+    margin-bottom: 10px;
+}
+/*  ======================
+    || END Contnet Wrapper
+    ======================*/
+
+
+/*  =====================
+    || Banner Image
+    =====================*/
+#image_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 0px;
+    width: 100%;
+}
+
+#image_woman_online_mobile {
+    margin-top: -105px;
+    margin-left: -26px; /* Helps center element because it has 26px of white space on the left */
+    width: 266px;
+    height: 196px;
+}
+
+#image_shadow_mobile {
+    margin-top: -90px;
+    width: 240px;
+    height: 104px;
+}
+
+#image_woman_online_desktop,
+#image_shadow_desktop,
+#image_box_desktop {
+    display: none;
+}
+/*  ====================
+    || END Banner Image
+    =====================*/  
+
+
+/*  =====================
+    || FAQ Section
+    ======================*/
+main {
+    margin: 120px 0px auto 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 340px;
+    min-height: fit-content;
+    max-height: 400px;
+}
+
+#h1_FAQ {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: xx-large;
+    color: hsl(238, 29%, 16%); /* Very dark desaturated blue*/
+    width: 100%;
+    text-align: center;
+}
+
+.faq_dropdown {
+    display: grid;
+    grid-template-columns: auto 20px;
+    grid-template-rows: auto auto;
+    align-items: center;
+}
+
+.question_text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.answer_text {
+    display: none;
+    font-size: 13px;
+    margin-top: 0px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.down_arrows {
+    grid-column: 2;
+    grid-row: 1;
+    width: 14px;
+    height: 9px;
+}
+
+.divider_line {
+    border-top: 1px hsl(240, 5%, 91%); /* Light grayish blue */
+    width: 100%;
+    margin-top: 3px;
+}
+/*  ==================
+    || END FAQ Section
+    ==================*/
+
+
+/*  ===============
+    || Footer
+    ===============*/
+footer {
+    background-color: white;
+    width: fit-content;
+    padding: 2px;
+    border-radius: 2px;
+    margin-top: auto;
+}
+/* ==============
+    || END Footer
+    =============*/
+
+/*  +++++++++++++++++++
+    || MEDIA QUERY
+    +++++++++++++++++++*/
+@media screen and (orientation: landscape) {
+    
+    /*  || +++ __Wrapper*/
+    #wrapper {
+        min-width: 780px;
+        max-width: 915px;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+     /*  || +++ __FAQ Section +++ */
+     main {
+        width: 41.5%;
+        margin-left: auto;
+        margin-right: 5%;
+    }
+
+    #h1_FAQ {
+        text-align: left;
+    }
+    
+    
+    /*  || +++ __Banner Images +++*/
+    #image_wrapper {
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        width: 0px;
+    }
+
+    #image_woman_online_mobile,
+    #image_shadow_mobile {
+        display: none;
+    }
+
+    #image_woman_online_desktop {
+        display: block;
+        width: 472px;
+        height: auto;
+        margin-left: -80px;
+    }
+
+    #image_shadow_desktop {
+        display: block;
+        width: 966px;
+        height: auto;
+        margin-top: -150px;
+        margin-left: -966px;
+        z-index: -1;
+    }
+
+    #image_box_desktop {
+        position: absolute;
+        display: block;
+        height: 191px;
+        width: auto;
+        margin-bottom: -100px;
+        margin-left: -95px;
+    }
+}
